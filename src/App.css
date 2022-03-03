@@ -1,0 +1,21 @@
+
+body {
+    text-align: center;
+}
+header {
+    display: flex;
+    justify-content: space-evenly;
+}
+.cardContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.currencyCard {
+    border: 2px solid black;
+    width: 150px;
+    margin: 10px;
+    
+    
+}
