@@ -1,6 +1,6 @@
 import BusinessNews from "./Components/BusinessNews";
 import CurrencyCard from "./Components/CurrencyCard";
-import CryptoNews from "./Components/CryptoNews";
+import Header from "./Components/Header";
 import React, { useEffect, useState } from 'react';
 import './App.css';
 
@@ -11,10 +11,11 @@ import './App.css';
 function App() {
   /* === Variables === */
   const [cryptoCard, setCryptoCard] = useState([]);
+  const [cryptoSearch, setCryptoSearch] = useState('');
 
-  /* === Coinstate API === */
+  /* === Fetching Data from Coinstat API === */
   useEffect(() => {
-    const coinstatUrl = "https://api.coinstats.app/public/v1/coins?skip=0&limit=10";
+    const coinstatUrl = "https://api.coinstats.app/public/v1/coins?skip=0";
     fetch(coinstatUrl)
     .then((res) => res.json())
     .then(data => {
@@ -22,31 +23,27 @@ function App() {
     })
     .catch(console.error);
   }, []);
-
+// .slice(0,10)
 
   return (
     <>
-
-      <header>
-        <h3 id='logo'>Blockchain Buzz</h3>
-        <h3>Market Stat #1</h3>
-        <h3>Market Stat #2</h3>
-        <h3>Market Stat #3</h3>
-      </header>
-
-      
-      <div className='newsContainer'>
-        <BusinessNews />
-        <CryptoNews />
-      </div>
-        
+      <Header />
+    
         <h1>Crypto Summary Market</h1>
-        <input type="text" placeholder="Search Crypto" />
-
-
-
+        <input 
+          id='cryptoSearch' 
+          type="text" 
+          placeholder="Search Crypto" 
+          onChange={event => setCryptoSearch(event.target.value)} 
+        />
         <div className='cardContainer'>
-          {cryptoCard.map((element, index) =>{
+          {cryptoCard.filter((element) => {
+            if (cryptoSearch === ''){
+              return element
+            } else if (element.name.toLowerCase().includes(cryptoSearch.toLowerCase())){
+              return element
+            }
+          }).slice(0,10).map((element, index) =>{
             return (
               <div key={element.volume}>
                 <CurrencyCard
@@ -60,17 +57,56 @@ function App() {
               </div>
             )
           })}
+
+        </div>
+        <div className='newsContainer'>
+        <BusinessNews />
         </div>
 
-
-
-
-      
-
-      
 
     </>
   );
 }
 
 export default App;
+
+
+
+
+// return (
+//   <>
+//     <Header />
+  
+//       <h1>Crypto Summary Market</h1>
+//       <input id='cryptoSearch' type="text" placeholder="Search Crypto" />
+
+//       <div className='cardContainer'>
+//         {cryptoCard.map((element, index) =>{
+//           return (
+//             <div key={element.volume}>
+//               <CurrencyCard
+//                 key={element.volume}
+//                 name={element.name}
+//                 icon={element.icon}
+//                 price={element.price}
+//                 priceChangeDay={element.priceChange1d}
+//                 priceChangeWeek={element.priceChange1w}
+//               />
+//             </div>
+//           )
+//         })}
+
+//       </div>
+//       <div className='newsContainer'>
+//       <BusinessNews />
+//       </div>
+
+
+//   </>
+// );
+// }
+// export default App;
+
+
+
+

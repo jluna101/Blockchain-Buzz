@@ -2,14 +2,16 @@
 body {
     text-align: center;
 }
-header {
+.header {
     display: flex;
     justify-content: space-evenly;
 }
 #logo {
     
 }
-
+#cryptoSearch {
+    size-adjust: 1000px;
+}
 /* === Cryptocurrency Elements === */
 .cardContainer {
     display: flex;
@@ -26,24 +28,22 @@ header {
 /* === News Elements === */
 .newsContainer {
     border: 2px solid yellow;
-    display: flex;
-    justify-content: space-evenly;
+    
+    
 }
 /* === Business News Component === */
 .businessNews{
     border: 2px solid black;
-    width: 45%;
-}
-.newsCard {
     
 }
+.newsCard {
+    text-align: center;
+}
 #newsImg {
-    width: 90%;
+    width: 50%;
+}
+#newsTitle {
+    
+    display:block;
 }
 
-/* === Crypto News Component === */
-
-#CryptoNews{
-    border: 2px solid black;
-    width: 45%;
-}
