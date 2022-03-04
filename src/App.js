@@ -11,20 +11,6 @@ import './App.css';
 function App() {
   /* === Variables === */
   const [cryptoCard, setCryptoCard] = useState([]);
-  const [cryptoNews, SetCryptoNews] = useState([]);
-
-  /* === News API === */
-  useEffect(() => {
-    const newsApiUrl = 'https://newsapi.org/v2/everything?q=cryptocurrency&from=2022-03-03&sortBy=publishedAt&apiKey=f626ac4896d04b0f8dfb5fca5eaf1549';
-    fetch(newsApiUrl)
-    .then((res) => res.json())
-    .then(data => {
-        console.log(data.articles);
-        SetCryptoNews(data.articles);
-    })
-    .catch(console.error);
-  }, []);
-
 
   /* === Coinstate API === */
   useEffect(() => {
@@ -32,7 +18,6 @@ function App() {
     fetch(coinstatUrl)
     .then((res) => res.json())
     .then(data => {
-        // console.log(data);
         setCryptoCard(data.coins);
     })
     .catch(console.error);
@@ -63,15 +48,16 @@ function App() {
         <div className='cardContainer'>
           {cryptoCard.map((element, index) =>{
             return (
-              <>
+              <div key={element.volume}>
                 <CurrencyCard
+                  key={element.volume}
                   name={element.name}
                   icon={element.icon}
                   price={element.price}
                   priceChangeDay={element.priceChange1d}
                   priceChangeWeek={element.priceChange1w}
                 />
-              </>
+              </div>
             )
           })}
         </div>

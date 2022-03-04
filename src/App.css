@@ -29,12 +29,21 @@ header {
     display: flex;
     justify-content: space-evenly;
 }
-#BusinessNews{
+/* === Business News Component === */
+.businessNews{
     border: 2px solid black;
     width: 45%;
 }
+.newsCard {
+    
+}
+#newsImg {
+    width: 90%;
+}
+
+/* === Crypto News Component === */
+
 #CryptoNews{
     border: 2px solid black;
     width: 45%;
 }
-
