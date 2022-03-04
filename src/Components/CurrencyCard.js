@@ -2,22 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 function CurrencyCard(props) {
     /* === Variables === */
-    const [cryptoCard, setCryptoCard] = useState([]);
     const [cryptoSearch, setCryptoSearch] = useState('');
 
     
-    useEffect(() => {
-        const coinstatUrl = "https://api.coinstats.app/public/v1/coins?skip=0";
-        fetch(coinstatUrl)
-        .then((res) => res.json())
-        .then(data => {
-            setCryptoCard(data.coins);
-            console.log(data.coins);
-        })
-        .catch(console.error);
-        }, []);
-      
-
 
     return (
         <>
@@ -27,9 +14,9 @@ function CurrencyCard(props) {
                 onChange={event => setCryptoSearch(event.target.value)}
                 className='cryptoSearch' 
             />
-
+    
             <div className='cardContainer'>
-                    {cryptoCard.filter((element) => {
+                    {props.cryptoCard.filter((element) => {
                     if (cryptoSearch === ''){
                     return element
                     } else if (element.name.toLowerCase().includes(cryptoSearch.toLowerCase())){

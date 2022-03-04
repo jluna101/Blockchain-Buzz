@@ -1,31 +1,35 @@
 import BusinessNews from "./Components/BusinessNews";
 import CurrencyCard from "./Components/CurrencyCard";
 import Header from "./Components/Header";
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
+import { useEffect, useState } from 'react';
 
 
   
 
 function App() {
   /* === Variables === */
-  
+  const [cryptoCard, setCryptoCard] = useState([])
 
-  /* === Fetching Data from Coinstat API === */
-  
-
+  /* === Fetching Data from Coinstats API === */
+  useEffect(() => {
+    
+    const coinstatUrl = "https://api.coinstats.app/public/v1/coins?skip=0";
+    fetch(coinstatUrl)
+    .then((res) => res.json())
+    .then(data => {
+        setCryptoCard(data.coins);
+        console.log(data.coins);
+    })
+    .catch(console.error);
+    }, []);
 
   return (
     <>
-      <Header />
-      <h1>Crypto Summary Market</h1>    
-      <CurrencyCard />
-
-      <div className='newsContainer'>
+      <Header />  
+      <CurrencyCard cryptoCard={cryptoCard}/>
       <BusinessNews />
-      </div>
-
-
     </>
   );
 }

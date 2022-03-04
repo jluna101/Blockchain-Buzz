@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import CurrencyCard from './CurrencyCard';
 
 function Header(props) {
-    
+    console.log(props);
+
     return (
         <div className='header'>
             <h3>BTC Volume:</h3>
