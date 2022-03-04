@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-function BusinessNews(props) {
+function BusinessNews() {
     /* === Variables === */
     const [cryptoNews, setCryptoNews] = useState([]);
      /* === News API === */
