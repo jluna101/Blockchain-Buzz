@@ -6,6 +6,11 @@ header {
     display: flex;
     justify-content: space-evenly;
 }
+#logo {
+    
+}
+
+/* === Cryptocurrency Elements === */
 .cardContainer {
     display: flex;
     justify-content: space-evenly;
@@ -14,8 +19,22 @@ header {
 
 .currencyCard {
     border: 2px solid black;
-    width: 150px;
-    margin: 10px;
-    
-    
+    width: 175px;
+    margin: 10px; 
 }
+
+/* === News Elements === */
+.newsContainer {
+    border: 2px solid yellow;
+    display: flex;
+    justify-content: space-evenly;
+}
+#BusinessNews{
+    border: 2px solid black;
+    width: 45%;
+}
+#CryptoNews{
+    border: 2px solid black;
+    width: 45%;
+}
+

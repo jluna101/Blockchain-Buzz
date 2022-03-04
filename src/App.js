@@ -1,16 +1,30 @@
 import BusinessNews from "./Components/BusinessNews";
 import CurrencyCard from "./Components/CurrencyCard";
 import CryptoNews from "./Components/CryptoNews";
-import React from "react";
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
-// const newsAPI = 'https://newsapi.org/v2/everything?q=tesla&from=2022-02-03&sortBy=publishedAt&apiKey=f626ac4896d04b0f8dfb5fca5eaf1549';
+
   // const apiKey = 'f626ac4896d04b0f8dfb5fca5eaf1549';
 
 
 function App() {
+  /* === Variables === */
   const [cryptoCard, setCryptoCard] = useState([]);
+  const [cryptoNews, SetCryptoNews] = useState([]);
+
+  /* === News API === */
+  useEffect(() => {
+    const newsApiUrl = 'https://newsapi.org/v2/everything?q=cryptocurrency&from=2022-03-03&sortBy=publishedAt&apiKey=f626ac4896d04b0f8dfb5fca5eaf1549';
+    fetch(newsApiUrl)
+    .then((res) => res.json())
+    .then(data => {
+        console.log(data.articles);
+        SetCryptoNews(data.articles);
+    })
+    .catch(console.error);
+  }, []);
+
 
   /* === Coinstate API === */
   useEffect(() => {
@@ -29,18 +43,17 @@ function App() {
     <>
 
       <header>
-        <img src="" alt="" />
+        <h3 id='logo'>Blockchain Buzz</h3>
         <h3>Market Stat #1</h3>
         <h3>Market Stat #2</h3>
         <h3>Market Stat #3</h3>
-
-
       </header>
 
       
-
+      <div className='newsContainer'>
         <BusinessNews />
         <CryptoNews />
+      </div>
         
         <h1>Crypto Summary Market</h1>
         <input type="text" placeholder="Search Crypto" />
