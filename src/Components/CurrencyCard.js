@@ -28,7 +28,7 @@ function CurrencyCard(props) {
                     }
                     }).slice(0,10).map((element, index) =>{
                     return (
-                    <Link to={`/details/${element.name}`} key={element.volume}>
+                    <Link to={`/details/${element.id}`} key={element.volume}>
                         <div className='currencyCard'>
                             <h1>{element.name}</h1>
                             <img src={element.icon} alt={element.name} />

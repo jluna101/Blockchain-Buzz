@@ -31,8 +31,9 @@ function App() {
         <Routes>
           {/* <Route path='/' element={<BusinessNews />} /> */}
           <Route path='/' element={<CurrencyCard cryptoCard={cryptoCard} />} />
-          <Route path='/details/:name' element={<CryptoDetails />} />
+          <Route path='/details/:id' element={<CryptoDetails />} />
         </Routes>
+
       <BusinessNews />
     </>
   );
