@@ -1,17 +1,22 @@
 import React from 'react';
 
 
-function Header({data}) {
-    
+function Header({btc, eth}) {
     
     return (
         <div className='header'>
-            <h3>Total BTC Mined: %</h3>
-            <h3>BTC Supply: </h3>
-            <h3>ETH Volume: {}</h3>
-            <h3>ETH Supply: {}</h3>
+        { btc ? 
+            <div>
+                <h3>BTC Mined {btc.availableSupply / btc.totalSupply}%</h3>
+                <h3>Btc Volume: {btc.volume}</h3>
+                <h3>Eth Volume: {eth.volume}</h3>
+                <h3></h3>
+            </div>
+            : null }
         </div>
+
     );
 }
 
 export default Header;
+

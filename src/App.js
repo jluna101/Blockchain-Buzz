@@ -22,7 +22,7 @@ function App() {
   return (
     <>
     <div></div>
-      <Header data={cryptoCard[0]} />  
+      <Header btc={cryptoCard[0]} eth={cryptoCard[1]} />  
       <CurrencyCard cryptoCard={cryptoCard}/>
       <BusinessNews />
     </>
