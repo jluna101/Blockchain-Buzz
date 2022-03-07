@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function CurrencyCard(props) {
     /* === Variables === */
     const [cryptoSearch, setCryptoSearch] = useState('');
-
     
 
     return (
@@ -19,7 +19,6 @@ function CurrencyCard(props) {
             />
 
             {/* Card Component */}
-
             <div className='cardContainer'>
                     {props.cryptoCard.filter((element) => {
                     if (cryptoSearch === ''){
@@ -29,13 +28,15 @@ function CurrencyCard(props) {
                     }
                     }).slice(0,10).map((element, index) =>{
                     return (
-                    <div className='currencyCard' key={element.volume}>
-                        <h1>{element.name}</h1>
-                        <img src={element.icon} alt={element.name} />
-                        <h3>Price ${parseFloat(element.price).toFixed(2)}</h3>
-                        <h3>Daily Change: {element.priceChange1d}%</h3>
-                        <h3>Weekly Change: {element.priceChange1w}%</h3>
-                  </div>
+                    <Link to={`/details/${element.name}`} key={element.volume}>
+                        <div className='currencyCard'>
+                            <h1>{element.name}</h1>
+                            <img src={element.icon} alt={element.name} />
+                            <h3>Price ${parseFloat(element.price).toFixed(2)}</h3>
+                            <h3>Daily Change: {element.priceChange1d}%</h3>
+                            <h3>Weekly Change: {element.priceChange1w}%</h3>
+                        </div>
+                    </Link>
                         )
                     })}
             </div>

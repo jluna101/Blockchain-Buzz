@@ -6,8 +6,10 @@ body {
     display: flex;
     justify-content: space-evenly;
 }
-#logo {
-    
+/* === Removing Link underline not working === */
+link {
+    text-decoration: none;
+    color: inherit;
 }
 .cryptoSearch {
     font-size: 30px;
@@ -23,6 +25,15 @@ body {
     border: 2px solid black;
     width: 175px;
     margin: 30px;
+    border-radius: 10px;
+}
+.currencyCardDetails {
+    border: 2px solid black;
+    width: 175px;
+    margin: 30px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* === News Elements === */

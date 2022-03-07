@@ -5,7 +5,7 @@ function BusinessNews() {
     /* === Variables === */
     const [cryptoNews, setCryptoNews] = useState([]);
 
-     /* === News API === */
+     /* === Fetching from News API === */
     useEffect(() => {
     const newsApiUrl = 'https://newsapi.org/v2/top-headlines?q=crypto&from=2022-03-04&sortBy=publishedAt&apiKey=f626ac4896d04b0f8dfb5fca5eaf1549';
     fetch(newsApiUrl)
