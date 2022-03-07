@@ -1,12 +1,11 @@
 import BusinessNews from "./Components/BusinessNews";
 import CurrencyCard from "./Components/CurrencyCard";
 import Header from "./Components/Header";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import { useEffect, useState } from 'react';
 
-
-  
+/* === Title Tag === */
+document.title = `Blockchain Buzz`;
 
 function App() {
   /* === Variables === */
@@ -14,20 +13,16 @@ function App() {
 
   /* === Fetching Data from Coinstats API === */
   useEffect(() => {
-    
-    const coinstatUrl = "https://api.coinstats.app/public/v1/coins?skip=0";
-    fetch(coinstatUrl)
+    fetch('https://api.coinstats.app/public/v1/coins?skip=0')
     .then((res) => res.json())
-    .then(data => {
-        setCryptoCard(data.coins);
-        console.log(data.coins);
-    })
+    .then(data => setCryptoCard(data.coins))
     .catch(console.error);
     }, []);
 
   return (
     <>
-      <Header />  
+    <div></div>
+      <Header data={cryptoCard[0]} />  
       <CurrencyCard cryptoCard={cryptoCard}/>
       <BusinessNews />
     </>

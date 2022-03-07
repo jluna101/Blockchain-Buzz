@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 function CurrencyCard(props) {
     /* === Variables === */
@@ -8,13 +8,18 @@ function CurrencyCard(props) {
 
     return (
         <>
+
+        {/* Search Bar  */}
+
             <input 
                 type="text" 
                 placeholder="Search Crypto" 
                 onChange={event => setCryptoSearch(event.target.value)}
                 className='cryptoSearch' 
             />
-    
+
+            {/* Card Component */}
+
             <div className='cardContainer'>
                     {props.cryptoCard.filter((element) => {
                     if (cryptoSearch === ''){
