@@ -42,6 +42,7 @@ body {
 .cryptoSearch {
     text-align: center;
     font-size: 2rem;
+    border-radius: 15px;
 }
 
 /* === TITLE, SEARCHBAR: HOVER === */
@@ -133,6 +134,7 @@ body {
 #newsImg {
     width: 60%;
     margin-top: 50px;
+    border-radius: 15px;
 }
 #newsTitle {
     display:block;
