@@ -21,6 +21,7 @@ function BusinessNews() {
         <div className='newsContainer'>
             <div className='businessNews'>
                 <h2 id='mainNewsTitle'>Latest Crypto News </h2>
+                
                 {cryptoNews ? <> 
                 {/* Mapping News Card */}
                 {cryptoNews.map((news, index) => {
@@ -35,7 +36,7 @@ function BusinessNews() {
                         </div>
                     )
                 })}
-                 </> : null }
+                 </> : <div>Loading...</div> }
 
             </div>
         </div>

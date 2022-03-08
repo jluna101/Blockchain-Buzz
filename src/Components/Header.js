@@ -13,7 +13,7 @@ function Header({btc, eth}) {
                     <h3>ETH Market Cap: ${parseFloat(eth.marketCap).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h3>
                 </div>
             </>
-            : null }
+            : <div>Loading...</div> }
         </div>
 
     );
