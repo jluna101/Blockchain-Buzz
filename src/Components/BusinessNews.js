@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
 
-
 function BusinessNews(props) {
-    const apiKey = 'pub_5276c6da652d71ae26db2a247701f9642927';
-    const url='https://newsdata.io/api/1/news?apikey=' + apiKey + '&q=cryptocurrency&country=us&language=en&category=business' ;
+    
 
     const [cryptoNews, setCryptoNews] = useState([]);
 
     useEffect(() => {
+        const url = `https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWS_KEY}&q=cryptocurrency&country=us&language=en&category=business`;
         fetch(url)
         .then((res) => res.json())
         .then(data => {
             setCryptoNews(data.results)
-            console.log(data.results)
         })
         .catch(console.error);
         }, []);
@@ -25,12 +23,12 @@ return (
                     <h2 id='mainNewsTitle'>Latest Crypto News </h2>
                     {cryptoNews ? <> 
                     {/* Mapping News Card */}
-                    {cryptoNews.map((news, index) => {
+                    {cryptoNews.slice(0,10).map((news, index) => {
                         return (
                             <div className='newsCard' key={news.pubDate + news.url}>
                                 <a id='newsTitle' href={news.link}>
-                                    <img id='newsImg' src={news.image_url} alt={news.title}/>
-                                    <h2>{news.title}</h2>
+                                    {news.image_url !== null ? <img id='newsImg' src={news.image_url} alt={news.title}/>: <></>}
+                                    <h2 id='actualNewsTitle'> {news.title}</h2>
                                 </a>
                                 
                 

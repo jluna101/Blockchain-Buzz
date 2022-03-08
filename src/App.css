@@ -30,7 +30,7 @@ body {
     font-size: 2rem;
     width: 100%;
     color: var(--primary);
-    text-shadow: 2px 2px;
+    text-shadow: 1px 1px yellow;
 }
 
 .cryptoSearch {
@@ -138,6 +138,12 @@ body {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+}
+#actualNewsTitle {
+
+}
+#actualNewsTitle:hover {
+    color: var(--primary);
 }
 #mainNewsTitle {
     color: var(--news);
