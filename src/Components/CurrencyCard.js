@@ -4,20 +4,18 @@ import { Link } from 'react-router-dom';
 function CurrencyCard(props) {
     /* === Variables === */
     const [cryptoSearch, setCryptoSearch] = useState('');
-    
+    /* Title Tag */
+    document.title = `Blockchain Buzz | Home`;
 
     return (
         <>
 
         {/* Search Bar  */}
-
             <input 
                 type="text" 
                 placeholder="Search Crypto" 
                 onChange={event => setCryptoSearch(event.target.value)}
-                className='cryptoSearch' 
-            />
-
+                className='cryptoSearch' />
             {/* Card Component */}
             <div className='cardContainer'>
                     {props.cryptoCard.filter((element) => {
@@ -28,13 +26,18 @@ function CurrencyCard(props) {
                     }
                     }).slice(0,10).map((element, index) =>{
                     return (
-                    <Link to={`/details/${element.id}`} key={element.volume}>
+                    <Link id='cardLink' to={`/details/${element.id}`} key={element.volume}>
                         <div className='currencyCard'>
-                            <h1>{element.name}</h1>
+                            <h1 id='cardTitle'>{element.name}</h1>
                             <img src={element.icon} alt={element.name} />
                             <h3>Price ${parseFloat(element.price).toFixed(2)}</h3>
-                            <h3>Daily Change: {element.priceChange1d}%</h3>
-                            <h3>Weekly Change: {element.priceChange1w}%</h3>
+                            <div>
+                                <h3>Daily Change:</h3>
+                                <h3> {element.priceChange1d < 0 ? <h3 id='negative'>{element.priceChange1d}%</h3> : <h3 id='positive'>{element.priceChange1d}%</h3>}</h3>
+                                <h3>Weekly Change:</h3>
+                                <h3> {element.priceChange1d < 0 ? <h3 id='negative'>{element.priceChange1w}%</h3> : <h3 id='positive'>{element.priceChange1w}%</h3>}</h3>
+                            </div>
+                            
                         </div>
                     </Link>
                         )
@@ -48,20 +51,3 @@ function CurrencyCard(props) {
 export default CurrencyCard;
 
 
-
-
-
-// function CurrencyCard(props) {
-
-//     return (
-//         <div className='currencyCard'>
-//             <h1> {props.name} </h1>
-//             <img src={props.icon} alt="" />
-//             <h3>Price ${parseFloat(props.price).toFixed(2)} </h3>
-//             <h3>Daily Change {props.priceChangeDay}%</h3>
-//             <h3>Weekly Change {props.priceChangeWeek}%</h3>
-//         </div>
-//     );
-// }
-
-// export default CurrencyCard;

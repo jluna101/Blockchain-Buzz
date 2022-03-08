@@ -1,60 +1,130 @@
 
+:root {
+    --primary: #fca311;
+    --primary-bg: white;
+
+    --secondary: black;
+    --secondary-bg: black;
+
+    --header-bg: white;
+    --news-bg: white;
+    --news: #black;
+
+
+}
+
 body {
     text-align: center;
+    width: 100%;
+    color: var(--secondary);
+    background-color: var(--secondary-bg);
 }
 .header {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    color: var(--secondary);
+    background-color: var(--header-bg);
 }
-/* === Removing Link underline not working === */
-link {
-    text-decoration: none;
-    color: inherit;
+
+#titleColor{
+    font-size: 3rem;
+    width: 100%;
+    color: var(--primary);
+    text-shadow: 2px 2px;
 }
+
 .cryptoSearch {
     font-size: 30px;
 }
-/* === Cryptocurrency Elements === */
+/* === Removing Link Styling === */
+
+#title, #cardLink, #newsTitle, a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* === Cryptocurrency Card Elements === */
+
 .cardContainer {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    text-align: center;
     flex-wrap: wrap;
+
 }
 
 .currencyCard {
     border: 2px solid black;
     width: 175px;
     margin: 30px;
+    padding: 50px;
     border-radius: 10px;
+    text-decoration: none;
+    color: var(--secondary);
+    background-color: var(--primary-bg);
+    border: 10px solid var(--primary);
 }
 .currencyCardDetails {
     border: 2px solid black;
     width: 175px;
-    margin: 30px;
-    border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 35px;
+    padding: 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--secondary);
+    background-color: var(--primary-bg);
+}
+#cardTitle {
+    color: var(--primary);
+    text-shadow: 1px 1px black;
+}
+#positive {
+    color: green;
+  }
+#negative {
+    color: red;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+#marketSummary {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    color:var(--primary);
+    background-color: (--primary);
+}
+#summaryTitle {
+    color: var(--primary);
 }
 
-/* === News Elements === */
-.newsContainer {
-    border: 2px solid yellow;
-    
-    
-}
 /* === Business News Component === */
+.newsContainer {
+    background-color: var(--news-bg);
+}
+
 .businessNews{
-    border: 2px solid black;
     
 }
 .newsCard {
     text-align: center;
 }
 #newsImg {
-    width: 50%;
+    width: 100%;
 }
 #newsTitle {
-    
     display:block;
+    margin-bottom: 30px;
+    color: var(--news);
+    
 }
-
+#latestNewsTitle {
+    color: var(--news);
+    font-size: 3rem;
+}
+#newsTitleTest{
+    width: 100%;
+}
