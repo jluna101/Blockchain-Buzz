@@ -37,7 +37,7 @@ function CryptoDetails(props) {
                     <h3>Daily Change:</h3>
                     <> {cryptoCard.priceChange1d < 0 ? <h3 id='negative'>{cryptoCard.priceChange1d}%</h3> : <h3 id='positive'>{cryptoCard.priceChange1d}%</h3>}</>
                     <h3>Weekly Change:</h3>
-                    <> {cryptoCard.priceChange1d < 0 ? <h3 id='negative'>{cryptoCard.priceChange1w}%</h3> : <h3 id='positive'>{cryptoCard.priceChange1w}%</h3>}</>
+                    <> {cryptoCard.priceChange1w < 0 ? <h3 id='negative'>{cryptoCard.priceChange1w}%</h3> : <h3 id='positive'>{cryptoCard.priceChange1w}%</h3>}</>
                 </div>
             </div>
             : <div><h1>Loading...</h1></div> }

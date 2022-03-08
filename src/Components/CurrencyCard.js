@@ -35,7 +35,7 @@ function CurrencyCard(props) {
                                 <h3>Daily Change:</h3>
                                 <> {element.priceChange1d < 0 ? <h3 id='negative'>{element.priceChange1d}%</h3> : <h3 id='positive'>{element.priceChange1d}%</h3>}</>
                                 <h3>Weekly Change:</h3>
-                                <> {element.priceChange1d < 0 ? <h3 id='negative'>{element.priceChange1w}%</h3> : <h3 id='positive'>{element.priceChange1w}%</h3>}</>
+                                <> {element.priceChange1w < 0 ? <h3 id='negative'>{element.priceChange1w}%</h3> : <h3 id='positive'>{element.priceChange1w}%</h3>}</>
                             </div>
                             
                         </div>
