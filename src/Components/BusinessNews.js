@@ -23,7 +23,7 @@ function BusinessNews() {
                 <h2 id='mainNewsTitle'>Latest Crypto News </h2>
 
                 {/* Mapping News Card */}
-                {cryptoNews.slice(0, 4).map((news, index) => {
+                {cryptoNews.map((news, index) => {
                     return (
                         <div className='newsCard' key={news.urlToImage + news.url}>
                             <a id='newsTitle' href={news.url}>
