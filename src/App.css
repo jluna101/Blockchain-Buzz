@@ -46,10 +46,10 @@ body {
 
 /* === TITLE, SEARCHBAR: HOVER === */
 .cryptoSearch:hover {
-    opacity: 75%;
+    opacity: 0.7;
 }
 #titleColor:hover {
-    opacity: 75%;
+    opacity: 0.7;
 }
 
 /* === CRYPTO CARD COMPONENT === */
