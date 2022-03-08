@@ -21,4 +21,3 @@ function Header({btc, eth}) {
 
 export default Header;
 
-// {parseFloat(element.price).toFixed(2)}<

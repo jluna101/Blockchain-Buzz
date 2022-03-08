@@ -1,6 +1,6 @@
 
 :root {
-    --primary: #fca311;
+    --primary: #ffaa00;
     --primary-bg: white;
 
     --secondary: black;
@@ -9,8 +9,6 @@
     --header-bg: white;
     --news-bg: white;
     --news: #black;
-
-
 }
 
 body {
@@ -29,14 +27,15 @@ body {
 }
 
 #titleColor{
-    font-size: 3rem;
+    font-size: 2rem;
     width: 100%;
     color: var(--primary);
     text-shadow: 2px 2px;
 }
 
 .cryptoSearch {
-    font-size: 30px;
+    text-align: center;
+    font-size: 2rem;
 }
 /* === Removing Link Styling === */
 
@@ -52,11 +51,15 @@ body {
     flex-direction: row;
     text-align: center;
     flex-wrap: wrap;
-
+}
+.cardDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
 }
 
 .currencyCard {
-    border: 2px solid black;
     width: 175px;
     margin: 30px;
     padding: 50px;
@@ -64,11 +67,18 @@ body {
     text-decoration: none;
     color: var(--secondary);
     background-color: var(--primary-bg);
-    border: 10px solid var(--primary);
+    border: 10px solid grey;
 }
+
+.currencyCard:hover {
+    border: 15px solid var(--primary);
+    transition: 400ms;
+    padding: 45px;
+}
+/* === Crypto Details Component === */
 .currencyCardDetails {
-    border: 2px solid black;
-    width: 175px;
+    width: 25%;
+    font-size: 1.5rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 35px;
@@ -99,6 +109,11 @@ body {
 }
 #summaryTitle {
     color: var(--primary);
+    font-size: 3rem;
+}
+#summaryText {
+    font-size: 1.5rem;
+    color: var(--primary-bg);
 }
 
 /* === Business News Component === */
@@ -106,25 +121,29 @@ body {
     background-color: var(--news-bg);
 }
 
-.businessNews{
-    
-}
 .newsCard {
     text-align: center;
 }
 #newsImg {
-    width: 100%;
+    width: 60%;
+    margin-top: 50px;
+}
+#newsImg:hover {
+    width: 65%;
+    transition: 500ms ease-in-out;
+    transition-delay: 200ms;
 }
 #newsTitle {
     display:block;
     margin-bottom: 30px;
     color: var(--news);
-    
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
-#latestNewsTitle {
+#mainNewsTitle {
     color: var(--news);
     font-size: 3rem;
-}
-#newsTitleTest{
-    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }

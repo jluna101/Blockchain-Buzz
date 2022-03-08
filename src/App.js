@@ -1,21 +1,17 @@
-import { Routes, Route, Link, Navigate } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import CryptoDetails from './Components/CryptoDetails';
 import BusinessNews from "./Components/BusinessNews";
 import CurrencyCard from "./Components/CurrencyCard";
-import CryptoDetails from './Components/CryptoDetails';
 import Header from "./Components/Header";
-import React, { useEffect, useState } from 'react';
 import './App.css';
-
-/* === Title Tag === */
-// document.title = `Blockchain Buzz`;
 
 function App() {
   /* === Variables === */
   const [cryptoCard, setCryptoCard] = useState([])
-
   /* === Fetching Data from Coinstats API === */
   useEffect(() => {
-    fetch('https://api.coinstats.app/public/v1/coins?skip=0')
+    fetch('https://api.coinstats.app/public/v1/coins')
     .then((res) => res.json())
     .then(data => setCryptoCard(data.coins))
     .catch(console.error);
