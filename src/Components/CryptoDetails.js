@@ -7,7 +7,6 @@ function CryptoDetails(props) {
     /* === Variables === */
     const { id } = useParams();
     const [cryptoCard, setCryptoCard] = useState(null);
-
     /* === Fetching Data from Coinstats API === */
     useEffect(() => {
         fetch(`https://api.coinstats.app/public/v1/coins/${id.toLowerCase()}`)
