@@ -24,7 +24,7 @@ function CurrencyCard(props) {
                     } else if (element.name.toLowerCase().includes(cryptoSearch.toLowerCase())){
                     return element
                     }
-                    }).slice(0,10).map((element, index) =>{
+                    }).slice(0,8).map((element, index) =>{
                     return (
                     <Link id='cardLink' to={`/details/${element.id}`} key={element.volume}>
                         <div className='currencyCard'>

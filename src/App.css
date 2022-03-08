@@ -27,10 +27,10 @@ body {
     background-color: var(--header-bg);
 }
 #titleColor{
-    font-size: 2.5rem;
+    font-size: 3rem;
     width: 100%;
     color: var(--primary-text);
-    text-shadow: 1px 1px grey;
+    text-shadow: 1px 1px black;
 }
 #titleColor:hover {
     opacity: 75%;
@@ -49,12 +49,16 @@ body {
 }
 
 /* === Cryptocurrency Card Elements === */
+#titleCryptoCard {
+    background-image: url('https://user-images.githubusercontent.com/97872070/157295084-01267973-7427-4369-bae4-4cf916d5abe4.jpg');
+}
 .cardContainer {
     display: flex;
     flex-direction: row;
     text-align: center;
     flex-wrap: wrap;
 }
+
 .cardDetailsContainer {
     display: flex;
     flex-direction: column;
@@ -70,11 +74,11 @@ body {
     text-decoration: none;
     color: var(--secondary-text);
     background-color: var(--primary-bg);
-    border: 10px solid grey;
+    border: 7px solid black;
 }
 
 .currencyCard:hover {
-    border: 15px solid var(--primary-text);
+    border: 12px solid var(--primary-text);
     transition: 400ms;
     padding: 45px;
 }
@@ -115,7 +119,7 @@ body {
 }
 #summaryTitle {
     color: var(--primary-text);
-    font-size: 3rem;
+    font-size: 2rem;
 }
 #summaryText {
     font-size: 1.5rem;

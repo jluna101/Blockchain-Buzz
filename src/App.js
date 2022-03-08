@@ -20,11 +20,13 @@ function App() {
   return (
     <>
       <Header btc={cryptoCard[0]} eth={cryptoCard[1]} />
+      <div id='titleCryptoCard'>
       <h1 id='titleColor'><Link id='title' to='/'>Blockchain Buzz</Link></h1>
         <Routes>
           <Route path='/' element={<CurrencyCard cryptoCard={cryptoCard} />} />
           <Route path='/details/:id' element={<CryptoDetails />} />
         </Routes>
+      </div>
       <BusinessNews />
     </>
   );
