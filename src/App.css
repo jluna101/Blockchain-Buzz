@@ -1,9 +1,9 @@
 
 :root {
-    --primary: #ffaa00;
+    --primary-text: #ffaa00;
     --primary-bg: white;
 
-    --secondary: black;
+    --secondary-text: black;
     --secondary-bg: black;
 
     --header-bg: white;
@@ -14,28 +14,33 @@
 body {
     text-align: center;
     width: 100%;
-    color: var(--secondary);
+    color: var(--secondary-text);
     background-color: var(--secondary-bg);
 }
+/* === Header / Title / Search=== */
 .header {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     width: 100%;
-    color: var(--secondary);
+    color: var(--secondary-text);
     background-color: var(--header-bg);
 }
-
 #titleColor{
-    font-size: 2rem;
+    font-size: 2.5rem;
     width: 100%;
-    color: var(--primary);
-    text-shadow: 1px 1px yellow;
+    color: var(--primary-text);
+    text-shadow: 1px 1px grey;
 }
-
+#titleColor:hover {
+    opacity: 75%;
+}
 .cryptoSearch {
     text-align: center;
     font-size: 2rem;
+}
+.cryptoSearch:hover {
+    opacity: 75%;
 }
 /* === Removing Link Styling === */
 #title, #cardLink, #newsTitle, a {
@@ -63,13 +68,13 @@ body {
     padding: 50px;
     border-radius: 10px;
     text-decoration: none;
-    color: var(--secondary);
+    color: var(--secondary-text);
     background-color: var(--primary-bg);
     border: 10px solid grey;
 }
 
 .currencyCard:hover {
-    border: 15px solid var(--primary);
+    border: 15px solid var(--primary-text);
     transition: 400ms;
     padding: 45px;
 }
@@ -83,12 +88,15 @@ body {
     padding: 50px;
     border-radius: 10px;
     text-decoration: none;
-    color: var(--secondary);
+    color: var(--secondary-text);
     background-color: var(--primary-bg);
 }
 #cardTitle {
     color: var(--primary);
     text-shadow: 1px 1px black;
+}
+#cryptoWebsite{
+    font-size: 1.5rem;
 }
 #positive {
     color: green;
@@ -102,11 +110,11 @@ body {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
-    color:var(--primary);
+    color:var(--primary-text);
     background-color: (--primary);
 }
 #summaryTitle {
-    color: var(--primary);
+    color: var(--primary-text);
     font-size: 3rem;
 }
 #summaryText {
@@ -143,7 +151,7 @@ body {
 
 }
 #actualNewsTitle:hover {
-    color: var(--primary);
+    color: var(--primary-text);
 }
 #mainNewsTitle {
     color: var(--news);

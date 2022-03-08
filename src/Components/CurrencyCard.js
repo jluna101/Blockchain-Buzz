@@ -33,9 +33,9 @@ function CurrencyCard(props) {
                             <h3>Price ${parseFloat(element.price).toFixed(2)}</h3>
                             <div>
                                 <h3>Daily Change:</h3>
-                                <h3> {element.priceChange1d < 0 ? <h3 id='negative'>{element.priceChange1d}%</h3> : <h3 id='positive'>{element.priceChange1d}%</h3>}</h3>
+                                <> {element.priceChange1d < 0 ? <h3 id='negative'>{element.priceChange1d}%</h3> : <h3 id='positive'>{element.priceChange1d}%</h3>}</>
                                 <h3>Weekly Change:</h3>
-                                <h3> {element.priceChange1d < 0 ? <h3 id='negative'>{element.priceChange1w}%</h3> : <h3 id='positive'>{element.priceChange1w}%</h3>}</h3>
+                                <> {element.priceChange1d < 0 ? <h3 id='negative'>{element.priceChange1w}%</h3> : <h3 id='positive'>{element.priceChange1w}%</h3>}</>
                             </div>
                             
                         </div>
