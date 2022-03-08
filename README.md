@@ -2,12 +2,15 @@
 Blockchain Buzz is a hub for cryptocurrency financial metrics and trending general cryptocurrency news. Whether it's viewing the price and market cap of popular cryptocurrencies such as Bitcoin or skimming the latest cryptocurrency news, we have you covered with one place. Now buzz over to Blockchain Buzz!
 
 ## Motivation
-As a Cryptocurrency enthusiast and investor, there are various websites I frequent to view cryptocurrency prices and news. However, these two are not normally found together and as a result in order to be well informed I have to visit multiple financial and news websites. Blockchain buzz solves this minor annoyance of mine and I can now go to just one website, Blockchain Buzz!  
+As a Cryptocurrency enthusiast and investor, there are various websites I frequent to view cryptocurrency prices and news. However, these two are not normally found together and as a result in order to be well informed I have to visit multiple financial and news websites. Blockchain buzz solves this minor annoyance of mine and I can now go to just one website.  
 
 ## App Screenshots
 > ![Screen Shot 2022-03-08 at 10 04 20 AM](https://user-images.githubusercontent.com/97872070/157299301-e85876fa-31ef-4329-a34d-69e13aadbdb8.png)
+
 > ![Screen Shot 2022-03-08 at 10 05 05 AM](https://user-images.githubusercontent.com/97872070/157299336-8094a03c-f94d-48ff-be1d-ae9f74e033d9.png)
+
 > ![Screen Shot 2022-03-08 at 10 04 20 AM](https://user-images.githubusercontent.com/97872070/157299376-27e7f7f9-5ab1-4670-b8c2-ca3a72ca7fdd.png)
+
 > ![Screen Shot 2022-03-08 at 10 05 53 AM](https://user-images.githubusercontent.com/97872070/157299409-c88bb43e-e674-480c-896c-9011ef656540.png)
 
 ## Deployed App
@@ -54,7 +57,7 @@ Feel free to provide feedback as this helps me improve!
 - Submit a fix 
 - Propose new features 
 
-### Report Bugs
+### Report Bugs via Issue
 1. Provide a thorough description of the bug.
 2. Step-by-step explaination of how it was produced.
 3. Expected outcome and what actually occured

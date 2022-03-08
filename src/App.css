@@ -86,9 +86,7 @@ body {
 .currencyCardDetails {
     width: 25%;
     font-size: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 35px;
+    margin: 35px auto 0px auto; 
     padding: 50px;
     border-radius: 10px;
     text-decoration: none;
