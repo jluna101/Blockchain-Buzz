@@ -4,10 +4,10 @@ import React, { useState, useEffect } from 'react';
 function BusinessNews() {
     /* === Variables === */
     const [cryptoNews, setCryptoNews] = useState([]);
-    const apiKey = 'f626ac4896d04b0f8dfb5fca5eaf1549'; 
+    // const apiKey = 'f626ac4896d04b0f8dfb5fca5eaf1549'; 
     /* === Fetching from News API === */
     useEffect(() => {
-    const newsApiUrl = 'https://newsapi.org/v2/top-headlines?q=crypto&from=2022-03-04&sortBy=publishedAt&apiKey=' + apiKey;
+    const newsApiUrl = 'https://newsapi.org/v2/top-headlines?q=crypto&from=2022-03-04&sortBy=publishedAt&apiKey=f626ac4896d04b0f8dfb5fca5eaf1549';
     fetch(newsApiUrl)
     .then((res) => res.json())
     .then(data => setCryptoNews(data.articles))
@@ -21,7 +21,7 @@ function BusinessNews() {
         <div className='newsContainer'>
             <div className='businessNews'>
                 <h2 id='mainNewsTitle'>Latest Crypto News </h2>
-
+                {cryptoNews ? <> 
                 {/* Mapping News Card */}
                 {cryptoNews.map((news, index) => {
                     return (
@@ -35,6 +35,8 @@ function BusinessNews() {
                         </div>
                     )
                 })}
+                 </> : null }
+
             </div>
         </div>
     );
