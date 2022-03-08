@@ -17,7 +17,14 @@ body {
     color: var(--secondary-text);
     background-color: var(--secondary-bg);
 }
-/* === Header / Title / Search=== */
+
+/* === REMOVING LINK STYLING === */
+#title, #cardLink, #newsTitle, a, .currencyCard {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* === HEADER, TITLE, SEARCHBAR === */
 .header {
     display: flex;
     justify-content: space-evenly;
@@ -32,57 +39,49 @@ body {
     color: var(--primary-text);
     text-shadow: 1px 1px black;
 }
-#titleColor:hover {
-    opacity: 75%;
-}
 .cryptoSearch {
     text-align: center;
     font-size: 2rem;
 }
+
+/* === TITLE, SEARCHBAR: HOVER === */
 .cryptoSearch:hover {
     opacity: 75%;
 }
-/* === Removing Link Styling === */
-#title, #cardLink, #newsTitle, a {
-    text-decoration: none;
-    color: inherit;
+#titleColor:hover {
+    opacity: 75%;
 }
 
-/* === Cryptocurrency Card Elements === */
-#titleCryptoCard {
-    background-image: url('https://user-images.githubusercontent.com/97872070/157295084-01267973-7427-4369-bae4-4cf916d5abe4.jpg');
-}
+/* === CRYPTO CARD COMPONENT === */
 .cardContainer {
     display: flex;
     flex-direction: row;
     text-align: center;
     flex-wrap: wrap;
 }
-
 .cardDetailsContainer {
     display: flex;
     flex-direction: column;
     text-align: center;
     flex-wrap: wrap;
 }
-
 .currencyCard {
     width: 175px;
     margin: 30px;
     padding: 50px;
     border-radius: 10px;
-    text-decoration: none;
     color: var(--secondary-text);
     background-color: var(--primary-bg);
     border: 7px solid black;
 }
-
+/* === CRYPTO CARD COMPONENT: HOVER === */
 .currencyCard:hover {
     border: 12px solid var(--primary-text);
     transition: 400ms;
     padding: 45px;
 }
-/* === Crypto Details Component === */
+
+/* === CRYPTO DETAILS COMPONENT === */
 .currencyCardDetails {
     width: 25%;
     font-size: 1.5rem;
@@ -93,6 +92,9 @@ body {
     color: var(--secondary-text);
     background-color: var(--primary-bg);
 }
+#titleCryptoCard {
+    background-image: url('https://user-images.githubusercontent.com/97872070/157295084-01267973-7427-4369-bae4-4cf916d5abe4.jpg');
+}
 #cardTitle {
     color: var(--primary);
     text-shadow: 1px 1px black;
@@ -100,20 +102,11 @@ body {
 #cryptoWebsite{
     font-size: 1.5rem;
 }
-#positive {
-    color: green;
-  }
-#negative {
-    color: red;
-    margin-top: 0px;
-    padding-top: 0px;
-  }
 #marketSummary {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
     color:var(--primary-text);
-    background-color: (--primary);
 }
 #summaryTitle {
     color: var(--primary-text);
@@ -123,12 +116,17 @@ body {
     font-size: 1.5rem;
     color: var(--primary-bg);
 }
+#positive {
+    color: green;
+}
+#negative {
+    color: red;
+}
 
-/* === Business News Component === */
+/* === NEWS COMPONENT === */
 .newsContainer {
     background-color: var(--news-bg);
 }
-
 .newsCard {
     text-align: center;
 }
@@ -136,28 +134,23 @@ body {
     width: 60%;
     margin-top: 50px;
 }
+#newsTitle {
+    display:block;
+    margin: 0px auto 30px auto;
+    color: var(--news);
+    width: 70%;
+}
+#mainNewsTitle {
+    color: var(--news);
+    font-size: 3rem;
+    margin: 15px 0px 15px 0px;
+}
+/* === NEWS COMPONENT: HOVER === */
 #newsImg:hover {
     width: 65%;
     transition: 500ms ease-in-out;
     transition-delay: 200ms;
 }
-#newsTitle {
-    display:block;
-    margin-bottom: 30px;
-    color: var(--news);
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-}
-#actualNewsTitle {
-
-}
 #actualNewsTitle:hover {
     color: var(--primary-text);
-}
-#mainNewsTitle {
-    color: var(--news);
-    font-size: 3rem;
-    margin-top: 15px;
-    margin-bottom: 15px;
 }
