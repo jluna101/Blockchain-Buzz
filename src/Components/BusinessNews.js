@@ -4,31 +4,30 @@ import React, { useState, useEffect } from 'react';
 function BusinessNews(props) {
     /* === Variables === */
     const [cryptoNews, setCryptoNews] = useState([]);
+    // Converts unix timestamp to date
+    function datetime(num){
+        return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit'}).format(num)}
     /* === Fetching Data from News Data API === */
     useEffect(() => {
-        const url = `https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWS_KEY}&q=cryptocurrency&country=us&language=en&category=business`;
-        fetch(url)
+        fetch(`https://finnhub.io/api/v1/news?category=cryptocurrency&token=${process.env.REACT_APP_NEWS_KEY}`)
         .then((res) => res.json())
-        .then(data => setCryptoNews(data.results))
+        .then(data => setCryptoNews(data))
         .catch(err => alert('Opps.. something went wrong. Try again!'))
         }, []);
-
 return (
             // News Container
-            <div className='newsContainer'>
-                <div className='businessNews'>
-                    <h2 id='mainNewsTitle'>Latest Crypto News </h2>
+            <div className='bg-white'>
+                <h2 className='py-5'>Latest Crypto News </h2>
+                <div className='d-flex flex-wrap w-100 justify-content-center'>
                     {cryptoNews ? <> 
                     {/* Mapping News Card */}
-                    {cryptoNews.slice(0,10).map((news, index) => {
+                    {cryptoNews.slice(0,16).map((news, index) => {
                         return (
-                            <div className='newsCard' key={news.pubDate + news.url}>
-                                <a id='newsTitle' href={news.link}>
-                                    {news.image_url !== null ? <img id='newsImg' src={news.image_url} alt={news.title}/>: <></>}
-                                    <h2 id='actualNewsTitle'> {news.title}</h2>
-                                </a>
-                                
-                
+                            <div className='d-flex  w-25 px-3 py-3 mx-5 text-muted flex-column align-items-start' key={news.headline}>
+                                <img className="rounded w-100 shadow" src={news.image} alt={news.headline} />
+                                <p className='pt-3 w-100'>{news.source}</p>
+                                <h2 className='text-black w-100 fw-normal fs-6 align-items-center hover'>{news.headline}</h2>
+                                <p>{datetime((news.datetime)+'100')}</p>
                             </div>
                         )
                     })}

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import CryptoDetails from './Components/CryptoDetails';
 import BusinessNews from "./Components/BusinessNews";
 import CurrencyCard from "./Components/CurrencyCard";
+import Footer from './Components/Footer';
 import Header from "./Components/Header";
 import './App.css';
 
@@ -21,13 +22,14 @@ function App() {
     <>
       <Header btc={cryptoCard[0]} eth={cryptoCard[1]} />
       <div id='titleCryptoCard'>
-      <h1 id='titleColor'><Link id='title' to='/'>Blockchain Buzz</Link></h1>
+      <h1 className='text-warning py-5'><Link id='title' to='/'>Blockchain Buzz</Link></h1>
         <Routes>
           <Route path='/' element={<CurrencyCard cryptoCard={cryptoCard} />} />
           <Route path='/details/:id' element={<CryptoDetails />} />
         </Routes>
       </div>
-      <BusinessNews />
+      <BusinessNews/>
+      <Footer/>
     </>
   );
 }

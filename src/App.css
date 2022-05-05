@@ -25,14 +25,6 @@ body {
 }
 
 /* === HEADER, TITLE, SEARCHBAR === */
-.header {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    width: 100%;
-    color: var(--secondary-text);
-    background-color: var(--header-bg);
-}
 #titleColor{
     font-size: 3rem;
     width: 100%;
@@ -117,12 +109,6 @@ body {
     font-size: 1.5rem;
     color: var(--primary-bg);
 }
-#positive {
-    color: green;
-}
-#negative {
-    color: red;
-}
 
 /* === NEWS COMPONENT === */
 .newsContainer {
@@ -147,12 +133,17 @@ body {
     font-size: 3rem;
     margin: 15px 0px 15px 0px;
 }
-/* === NEWS COMPONENT: HOVER === */
-#newsImg:hover {
-    width: 65%;
-    transition: 500ms ease-in-out;
-    transition-delay: 200ms;
+/* NEW Styles */
+
+.hover {
+
 }
-#actualNewsTitle:hover {
-    color: var(--primary-text);
+.hover:hover {
+    opacity: .95;
+    cursor: grab ;
+    color:#ffaa00;
+}
+#link {
+    text-decoration: none;
+    color: inherit;
 }
