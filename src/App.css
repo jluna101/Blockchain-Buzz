@@ -139,7 +139,7 @@ body {
 
 }
 .hover:hover {
-    opacity: .95;
+    opacity: .8;
     cursor: grab ;
     color:#ffaa00;
 }
