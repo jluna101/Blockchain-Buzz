@@ -23,11 +23,13 @@ return (
                     {/* Mapping News Card */}
                     {cryptoNews.slice(0,16).map((news, index) => {
                         return (
-                            <div className='d-flex  w-25 px-3 py-3 mx-5 text-muted flex-column align-items-start' key={news.headline}>
-                                <img className="rounded w-100 shadow hover" src={news.image} alt={news.headline} />
-                                <p className='pt-3 w-100'>{news.source}</p>
-                                <h2 className='text-black w-100 fw-normal fs-6 align-items-center hover'>{news.headline}</h2>
+                            <div className='d-flex  w-25 px-3 py-3 my-3 mx-5 text-muted flex-column align-items-start hoverNews' key={news.headline}>
+                                <a className='link d-flex flex-column align-items-start' href={news.url} target='_blank' >
+                                <img className="rounded w-100 shadow" src={news.image} alt={news.headline} />
+                                <p className='pt-3'>{news.source}</p>
+                                <h2 className='text-black w-100 fw-normal fs-6 align-items-center'>{news.headline}</h2>
                                 <p>{datetime((news.datetime)+'100')}</p>
+                                </a>
                             </div>
                         )
                     })}

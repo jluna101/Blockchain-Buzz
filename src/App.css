@@ -14,125 +14,8 @@
 body {
     text-align: center;
     width: 100%;
-    color: var(--secondary-text);
-    background-color: var(--secondary-bg);
 }
 
-/* === REMOVING LINK STYLING === */
-#title, #cardLink, #newsTitle, a, .currencyCard {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* === HEADER, TITLE, SEARCHBAR === */
-#titleColor{
-    font-size: 3rem;
-    width: 100%;
-    color: var(--primary-text);
-    text-shadow: 1px 1px black;
-}
-.cryptoSearch {
-    text-align: center;
-    font-size: 2rem;
-    border-radius: 15px;
-}
-
-/* === TITLE, SEARCHBAR: HOVER === */
-.cryptoSearch:hover {
-    opacity: 0.7;
-}
-#titleColor:hover {
-    opacity: 0.7;
-}
-
-/* === CRYPTO CARD COMPONENT === */
-.cardContainer {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    flex-wrap: wrap;
-}
-.cardDetailsContainer {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    flex-wrap: wrap;
-}
-.currencyCard {
-    width: 175px;
-    margin: 30px;
-    padding: 50px;
-    border-radius: 10px;
-    color: var(--secondary-text);
-    background-color: var(--primary-bg);
-    border: 7px solid black;
-}
-/* === CRYPTO CARD COMPONENT: HOVER === */
-.currencyCard:hover {
-    border: 12px solid var(--primary-text);
-    transition: 400ms;
-    padding: 45px;
-}
-
-/* === CRYPTO DETAILS COMPONENT === */
-.currencyCardDetails {
-    width: 25%;
-    font-size: 1.5rem;
-    margin: 35px auto 0px auto; 
-    padding: 50px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: var(--secondary-text);
-    background-color: var(--primary-bg);
-}
-#titleCryptoCard {
-    background-image: url('https://user-images.githubusercontent.com/97872070/157295084-01267973-7427-4369-bae4-4cf916d5abe4.jpg');
-}
-#cardTitle {
-    color: var(--primary);
-    text-shadow: 1px 1px black;
-}
-#cryptoWebsite{
-    font-size: 1.5rem;
-}
-#marketSummary {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    color:var(--primary-text);
-}
-#summaryTitle {
-    color: var(--primary-text);
-    font-size: 2rem;
-}
-#summaryText {
-    font-size: 1.5rem;
-    color: var(--primary-bg);
-}
-
-/* === NEWS COMPONENT === */
-.newsContainer {
-    background-color: var(--news-bg);
-}
-.newsCard {
-    text-align: center;
-}
-#newsImg {
-    width: 60%;
-    margin-top: 50px;
-    border-radius: 15px;
-}
-#newsTitle {
-    display:block;
-    margin: 0px auto 30px auto;
-    color: var(--news);
-    width: 70%;
-}
-#mainNewsTitle {
-    color: var(--news);
-    font-size: 3rem;
-    margin: 15px 0px 15px 0px;
-}
 /* NEW Styles */
 
 .hover {
@@ -147,3 +30,16 @@ body {
     text-decoration: none;
     color: inherit;
 }
+.link { 
+    text-decoration: none;
+    color: inherit;
+}
+.hoverNews {
+
+}
+.hoverNews:hover {
+    background-color: rgb(245, 182, 55);
+    border-radius: 10px;
+    opacity: .9;
+}
+    

@@ -20,9 +20,9 @@ function App() {
 
   return (
     <>
-      <Header btc={cryptoCard[0]} eth={cryptoCard[1]} />
-      <div id='titleCryptoCard'>
-      <h1 className='text-warning py-5'><Link id='title' to='/'>Blockchain Buzz</Link></h1>
+      {/* <Header btc={cryptoCard[0]} eth={cryptoCard[1]} /> */}
+      <div className='bg-dark'>
+      <h1 className='text-warning pb-5 pt-2 fw-bold px-3 text-start'><Link className='hover' id='link' to='/'>Blockchain Buzz</Link></h1>
         <Routes>
           <Route path='/' element={<CurrencyCard cryptoCard={cryptoCard} />} />
           <Route path='/details/:id' element={<CryptoDetails />} />

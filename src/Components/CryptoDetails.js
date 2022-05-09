@@ -16,6 +16,7 @@ function CryptoDetails(props) {
         })
         .catch(err => alert('Opps.. something went wrong. Try again!'))
     }, []);
+    console.log(cryptoCard)
     /* === Title Tag === */
     {cryptoCard ? document.title = `${cryptoCard.name} | Blockchain Buzz`: document.title = `Blockchain Buzz | Details` }
     // Adds commas to integer
@@ -23,26 +24,31 @@ function CryptoDetails(props) {
         return parseInt((num)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
     // Adds color to integers (red/green)
     function numColor(num){
-        return num > 0 ? <p className="text-success">{num}%</p>:<p className="text-danger">{num}%</p>
+        return num > 0 ? <p className="text-success shadow rounded fs-3">{num}%</p>:<p className="text-danger shadow rounded fs-4">{num}%</p>
     }
     return (
-        <div>
+        <div className=''>
             
             { cryptoCard ? 
-            <div className='cardDetailsContainer'>
-                <div id='marketSummary'>
-                    <h2 id='summaryTitle'>{cryptoCard.name}'s Market Summary</h2>
-                    <h3 id='summaryText'>{cryptoCard.name}'s current price is ${integer(cryptoCard.price)} USD, with a 24-hour trading volume of ${integer(cryptoCard.volume)} USD. In the last 24-hours {cryptoCard.name} has seen a price change of {(cryptoCard.priceChange1d)}%, with a total market cap of ${integer(cryptoCard.marketCap)}.  </h3>
-                    <a id='cryptoWebsite' href={cryptoCard.websiteUrl}>{cryptoCard.name}'s Website</a>
+            <div className='w-100 bg-dark pb-5 justify-content-center'>
+                <div className='w-100 px-5 text-white'>
+                    <h2 className='text-warning'>{cryptoCard.name}'s Market Summary</h2>
+                    <h3 id='summaryText'>{cryptoCard.name} is ranked #{cryptoCard.rank}. With a 24-hour trading volume of ${integer(cryptoCard.volume)} and total market cap of ${integer(cryptoCard.marketCap)}.  </h3>
+                    <h3 className='fs-5'>For {cryptoCard.name}'s website click&nbsp;
+                    <a className='hover text-warning link' href={cryptoCard.websiteUrl} target='_blank'>here </a>
+                    and Twitter click&nbsp;
+                    <a className='hover text-warning link' href={cryptoCard.twitterUrl} target='_blank'>here</a>
+                    .</h3>
                 </div>
-                <div className='currencyCardDetails'>
-                    <h1 id='cardTitle'>{cryptoCard.name}</h1>
-                    <h3>Price ${parseFloat(cryptoCard.price).toFixed(2)}</h3>
-                    <img src={cryptoCard.icon} alt={cryptoCard.name} />
-                    <h3>Daily Change:</h3>
-                    <> {numColor(cryptoCard.priceChange1d)}</>
-                    <h3>Weekly Change:</h3>
-                    <> {numColor(cryptoCard.priceChange11)}</>
+                <div className='mx-auto mt-5 py-4 bg-white w-50 rounded text-black'>
+                    <img className='' src={cryptoCard.icon} alt={cryptoCard.name}/>
+                    <h3 className='h1 py-3'>${(cryptoCard.price).toFixed(2)}</h3>
+                    <div className='w-25 mx-auto'>
+                        <p className='mb-1 pb-1 text-muted'>Daily</p>
+                        <> {numColor(cryptoCard.priceChange1d)}</>
+                        <p className='mb-1 pb-1 text-muted'>Weekly</p>
+                        <> {numColor(cryptoCard.priceChange1w)}</>
+                    </div>
                 </div>
             </div>
             : <div><h1>Loading...</h1></div> }
