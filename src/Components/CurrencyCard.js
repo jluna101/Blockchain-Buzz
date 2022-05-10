@@ -38,7 +38,7 @@ function CurrencyCard(props) {
                     <Link id='link' className='w-25' to={`/details/${element.id}`} key={element.volume}>
                         <div className='d-flex border-end border-warning align-items-center flex-column bg-white py-3 my-3 hover shadow rounded w-100 pb-5' id='slide'>
                             <h5 className='mx-0 px-0 my-3'>  {element.name}</h5>
-                            <img className='w-50' src={element.icon} alt={element.name}/>
+                            <img className='w-25' src={element.icon} alt={element.name}/>
                             {element.price > 1? 
                             <p className='my-2 h2'> ${(integer(element.price))}</p>:
                             <p className='my-2 h2'> ${(element.price).toFixed(2)}</p>
